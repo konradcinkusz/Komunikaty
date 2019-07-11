@@ -32,8 +32,11 @@
             this.MessagesTabs = new System.Windows.Forms.TabControl();
             this.EnterMessages = new System.Windows.Forms.TabPage();
             this.IconGroupBox = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.InformationRadioButton = new System.Windows.Forms.RadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.WarningRadioButton = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ErrorRadioButton = new System.Windows.Forms.RadioButton();
             this.NoneRadioButton = new System.Windows.Forms.RadioButton();
             this.Save = new System.Windows.Forms.CheckBox();
@@ -42,22 +45,21 @@
             this.MessageTextBox = new System.Windows.Forms.TextBox();
             this.Message = new System.Windows.Forms.Label();
             this.ChooseMessages = new System.Windows.Forms.TabPage();
+            this.EditMessageButton = new System.Windows.Forms.Button();
             this.ChooseMessageList = new System.Windows.Forms.Label();
             this.ConfirmationListCheckBox = new System.Windows.Forms.CheckBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.EditMessageButton = new System.Windows.Forms.Button();
+            this.MessagesListView = new System.Windows.Forms.ListView();
+            this.Komunikat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Typ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MessagesTabs.SuspendLayout();
             this.EnterMessages.SuspendLayout();
             this.IconGroupBox.SuspendLayout();
-            this.ChooseMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ChooseMessages.SuspendLayout();
             this.SuspendLayout();
             // 
             // MessagesTabs
@@ -102,6 +104,15 @@
             this.IconGroupBox.TabStop = false;
             this.IconGroupBox.Text = "Wybierz typ";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Komunikaty.Resource.information;
+            this.pictureBox3.Location = new System.Drawing.Point(362, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(36, 38);
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
             // InformationRadioButton
             // 
             this.InformationRadioButton.AutoSize = true;
@@ -113,6 +124,15 @@
             this.InformationRadioButton.Text = "Informacja";
             this.InformationRadioButton.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Komunikaty.Resource.warning;
+            this.pictureBox2.Location = new System.Drawing.Point(242, 14);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // WarningRadioButton
             // 
             this.WarningRadioButton.AutoSize = true;
@@ -123,6 +143,15 @@
             this.WarningRadioButton.TabStop = true;
             this.WarningRadioButton.Text = "Ostrzeżenie";
             this.WarningRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Komunikaty.Resource.error;
+            this.pictureBox1.Location = new System.Drawing.Point(115, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // ErrorRadioButton
             // 
@@ -194,10 +223,10 @@
             // 
             // ChooseMessages
             // 
+            this.ChooseMessages.Controls.Add(this.MessagesListView);
             this.ChooseMessages.Controls.Add(this.EditMessageButton);
             this.ChooseMessages.Controls.Add(this.ChooseMessageList);
             this.ChooseMessages.Controls.Add(this.ConfirmationListCheckBox);
-            this.ChooseMessages.Controls.Add(this.richTextBox1);
             this.ChooseMessages.Location = new System.Drawing.Point(4, 22);
             this.ChooseMessages.Name = "ChooseMessages";
             this.ChooseMessages.Padding = new System.Windows.Forms.Padding(3);
@@ -205,6 +234,18 @@
             this.ChooseMessages.TabIndex = 1;
             this.ChooseMessages.Text = "Wybierz komunikat";
             this.ChooseMessages.UseVisualStyleBackColor = true;
+            // 
+            // EditMessageButton
+            // 
+            this.EditMessageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EditMessageButton.Image = global::Komunikaty.Resource.edit;
+            this.EditMessageButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.EditMessageButton.Location = new System.Drawing.Point(181, 105);
+            this.EditMessageButton.Name = "EditMessageButton";
+            this.EditMessageButton.Size = new System.Drawing.Size(250, 42);
+            this.EditMessageButton.TabIndex = 5;
+            this.EditMessageButton.Text = "Edytuj wiadomość";
+            this.EditMessageButton.UseVisualStyleBackColor = true;
             // 
             // ChooseMessageList
             // 
@@ -224,14 +265,6 @@
             this.ConfirmationListCheckBox.TabIndex = 3;
             this.ConfirmationListCheckBox.Text = "Wymagaj potwierdzenia";
             this.ConfirmationListCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(428, 77);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // CancelButton
             // 
@@ -255,44 +288,29 @@
             this.OkButton.Text = "Ok";
             this.OkButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
+            // MessagesListView
             // 
-            this.pictureBox3.Image = global::Komunikaty.Resource.information;
-            this.pictureBox3.Location = new System.Drawing.Point(362, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 38);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
+            this.MessagesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Komunikat,
+            this.Typ});
+            this.MessagesListView.GridLines = true;
+            this.MessagesListView.HideSelection = false;
+            this.MessagesListView.Location = new System.Drawing.Point(9, 25);
+            this.MessagesListView.Name = "MessagesListView";
+            this.MessagesListView.Size = new System.Drawing.Size(422, 74);
+            this.MessagesListView.TabIndex = 6;
+            this.MessagesListView.UseCompatibleStateImageBehavior = false;
+            this.MessagesListView.View = System.Windows.Forms.View.Details;
             // 
-            // pictureBox2
+            // Komunikat
             // 
-            this.pictureBox2.Image = global::Komunikaty.Resource.warning;
-            this.pictureBox2.Location = new System.Drawing.Point(242, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.Komunikat.Text = "Komunikat";
+            this.Komunikat.Width = 277;
             // 
-            // pictureBox1
+            // Typ
             // 
-            this.pictureBox1.Image = global::Komunikaty.Resource.error;
-            this.pictureBox1.Location = new System.Drawing.Point(115, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // EditMessageButton
-            // 
-            this.EditMessageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EditMessageButton.Image = global::Komunikaty.Resource.edit;
-            this.EditMessageButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.EditMessageButton.Location = new System.Drawing.Point(181, 105);
-            this.EditMessageButton.Name = "EditMessageButton";
-            this.EditMessageButton.Size = new System.Drawing.Size(250, 42);
-            this.EditMessageButton.TabIndex = 5;
-            this.EditMessageButton.Text = "Edytuj wiadomość";
-            this.EditMessageButton.UseVisualStyleBackColor = true;
+            this.Typ.Text = "Typ";
+            this.Typ.Width = 127;
             // 
             // SendWindow
             // 
@@ -310,11 +328,11 @@
             this.EnterMessages.PerformLayout();
             this.IconGroupBox.ResumeLayout(false);
             this.IconGroupBox.PerformLayout();
-            this.ChooseMessages.ResumeLayout(false);
-            this.ChooseMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ChooseMessages.ResumeLayout(false);
+            this.ChooseMessages.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,7 +350,6 @@
         private System.Windows.Forms.CheckBox Save;
         private System.Windows.Forms.Label ChooseMessageList;
         private System.Windows.Forms.CheckBox ConfirmationListCheckBox;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox IconGroupBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton ErrorRadioButton;
@@ -343,6 +360,9 @@
         private System.Windows.Forms.RadioButton InformationRadioButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button EditMessageButton;
+        private System.Windows.Forms.ColumnHeader Komunikat;
+        private System.Windows.Forms.ColumnHeader Typ;
+        private System.Windows.Forms.ListView MessagesListView;
     }
 }
 

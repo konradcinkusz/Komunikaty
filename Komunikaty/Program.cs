@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Komunikaty
@@ -14,9 +11,11 @@ namespace Komunikaty
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SendWindow());
+            Application.Run(new SendWindow(new RepozytoriumStatyczne.MessageStaticContext()));
+
         }
     }
 }
