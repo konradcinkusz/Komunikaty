@@ -122,7 +122,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Komunikaty.Resource.warning2;
             this.pictureBox2.Location = new System.Drawing.Point(242, 14);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 34);

@@ -78,14 +78,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Icons\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Icons\close.ico" />
+    <Content Include="Icons\ok.ico" />
+    <Content Include="Pictures\error.png" />
+    <Content Include="Pictures\information.png" />
     <Content Include="Pictures\warning.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\warning1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
