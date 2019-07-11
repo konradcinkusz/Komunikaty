@@ -81,6 +81,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Icons\close.ico" />
+    <None Include="Icons\edit.ico" />
+    <None Include="Icons\edit.png" />
+    <Content Include="Icons\message.ico" />
     <Content Include="Icons\ok.ico" />
     <Content Include="Pictures\error.png" />
     <Content Include="Pictures\information.png" />

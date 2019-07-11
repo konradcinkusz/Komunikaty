@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendWindow));
             this.MessagesTabs = new System.Windows.Forms.TabControl();
             this.EnterMessages = new System.Windows.Forms.TabPage();
             this.IconGroupBox = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.InformationRadioButton = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.WarningRadioButton = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ErrorRadioButton = new System.Windows.Forms.RadioButton();
             this.NoneRadioButton = new System.Windows.Forms.RadioButton();
             this.Save = new System.Windows.Forms.CheckBox();
@@ -44,19 +42,22 @@
             this.MessageTextBox = new System.Windows.Forms.TextBox();
             this.Message = new System.Windows.Forms.Label();
             this.ChooseMessages = new System.Windows.Forms.TabPage();
-            this.EditMessageButton = new System.Windows.Forms.Button();
             this.ChooseMessageList = new System.Windows.Forms.Label();
             this.ConfirmationListCheckBox = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EditMessageButton = new System.Windows.Forms.Button();
             this.MessagesTabs.SuspendLayout();
             this.EnterMessages.SuspendLayout();
             this.IconGroupBox.SuspendLayout();
+            this.ChooseMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.ChooseMessages.SuspendLayout();
             this.SuspendLayout();
             // 
             // MessagesTabs
@@ -66,7 +67,7 @@
             this.MessagesTabs.Location = new System.Drawing.Point(12, 12);
             this.MessagesTabs.Name = "MessagesTabs";
             this.MessagesTabs.SelectedIndex = 0;
-            this.MessagesTabs.Size = new System.Drawing.Size(445, 160);
+            this.MessagesTabs.Size = new System.Drawing.Size(445, 176);
             this.MessagesTabs.TabIndex = 0;
             // 
             // EnterMessages
@@ -80,7 +81,7 @@
             this.EnterMessages.Location = new System.Drawing.Point(4, 22);
             this.EnterMessages.Name = "EnterMessages";
             this.EnterMessages.Padding = new System.Windows.Forms.Padding(3);
-            this.EnterMessages.Size = new System.Drawing.Size(437, 134);
+            this.EnterMessages.Size = new System.Drawing.Size(437, 150);
             this.EnterMessages.TabIndex = 0;
             this.EnterMessages.Text = "Wprowadź komunikat";
             this.EnterMessages.UseVisualStyleBackColor = true;
@@ -94,20 +95,12 @@
             this.IconGroupBox.Controls.Add(this.pictureBox1);
             this.IconGroupBox.Controls.Add(this.ErrorRadioButton);
             this.IconGroupBox.Controls.Add(this.NoneRadioButton);
-            this.IconGroupBox.Location = new System.Drawing.Point(9, 69);
+            this.IconGroupBox.Location = new System.Drawing.Point(9, 90);
             this.IconGroupBox.Name = "IconGroupBox";
             this.IconGroupBox.Size = new System.Drawing.Size(422, 54);
             this.IconGroupBox.TabIndex = 5;
             this.IconGroupBox.TabStop = false;
             this.IconGroupBox.Text = "Wybierz typ";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(362, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 38);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
             // 
             // InformationRadioButton
             // 
@@ -120,14 +113,6 @@
             this.InformationRadioButton.Text = "Informacja";
             this.InformationRadioButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(242, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
             // WarningRadioButton
             // 
             this.WarningRadioButton.AutoSize = true;
@@ -138,14 +123,6 @@
             this.WarningRadioButton.TabStop = true;
             this.WarningRadioButton.Text = "Ostrzeżenie";
             this.WarningRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(115, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // ErrorRadioButton
             // 
@@ -192,7 +169,7 @@
             // ConfirmationCheckBox
             // 
             this.ConfirmationCheckBox.AutoSize = true;
-            this.ConfirmationCheckBox.Location = new System.Drawing.Point(9, 46);
+            this.ConfirmationCheckBox.Location = new System.Drawing.Point(10, 46);
             this.ConfirmationCheckBox.Name = "ConfirmationCheckBox";
             this.ConfirmationCheckBox.Size = new System.Drawing.Size(138, 17);
             this.ConfirmationCheckBox.TabIndex = 2;
@@ -224,20 +201,10 @@
             this.ChooseMessages.Location = new System.Drawing.Point(4, 22);
             this.ChooseMessages.Name = "ChooseMessages";
             this.ChooseMessages.Padding = new System.Windows.Forms.Padding(3);
-            this.ChooseMessages.Size = new System.Drawing.Size(437, 134);
+            this.ChooseMessages.Size = new System.Drawing.Size(437, 150);
             this.ChooseMessages.TabIndex = 1;
             this.ChooseMessages.Text = "Wybierz komunikat";
             this.ChooseMessages.UseVisualStyleBackColor = true;
-            // 
-            // EditMessageButton
-            // 
-            this.EditMessageButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditMessageButton.Location = new System.Drawing.Point(281, 105);
-            this.EditMessageButton.Name = "EditMessageButton";
-            this.EditMessageButton.Size = new System.Drawing.Size(150, 23);
-            this.EditMessageButton.TabIndex = 5;
-            this.EditMessageButton.Text = "Edytuj wiadomość";
-            this.EditMessageButton.UseVisualStyleBackColor = true;
             // 
             // ChooseMessageList
             // 
@@ -268,32 +235,74 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.Image = global::Komunikaty.Resource.close;
             this.CancelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CancelButton.Location = new System.Drawing.Point(378, 178);
+            this.CancelButton.Location = new System.Drawing.Point(325, 194);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.Size = new System.Drawing.Size(128, 41);
             this.CancelButton.TabIndex = 5;
             this.CancelButton.Text = "Anuluj";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
             // OkButton
             // 
+            this.OkButton.Image = global::Komunikaty.Resource.ok;
             this.OkButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OkButton.Location = new System.Drawing.Point(297, 178);
+            this.OkButton.Location = new System.Drawing.Point(197, 194);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 23);
+            this.OkButton.Size = new System.Drawing.Size(122, 41);
             this.OkButton.TabIndex = 4;
             this.OkButton.Text = "Ok";
             this.OkButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Komunikaty.Resource.information;
+            this.pictureBox3.Location = new System.Drawing.Point(362, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(36, 38);
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Komunikaty.Resource.warning;
+            this.pictureBox2.Location = new System.Drawing.Point(242, 14);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Komunikaty.Resource.error;
+            this.pictureBox1.Location = new System.Drawing.Point(115, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // EditMessageButton
+            // 
+            this.EditMessageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EditMessageButton.Image = global::Komunikaty.Resource.edit;
+            this.EditMessageButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.EditMessageButton.Location = new System.Drawing.Point(181, 105);
+            this.EditMessageButton.Name = "EditMessageButton";
+            this.EditMessageButton.Size = new System.Drawing.Size(250, 42);
+            this.EditMessageButton.TabIndex = 5;
+            this.EditMessageButton.Text = "Edytuj wiadomość";
+            this.EditMessageButton.UseVisualStyleBackColor = true;
             // 
             // SendWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 209);
+            this.ClientSize = new System.Drawing.Size(465, 247);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.MessagesTabs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SendWindow";
             this.Text = "Komunikat do wysłania";
             this.MessagesTabs.ResumeLayout(false);
@@ -301,11 +310,11 @@
             this.EnterMessages.PerformLayout();
             this.IconGroupBox.ResumeLayout(false);
             this.IconGroupBox.PerformLayout();
+            this.ChooseMessages.ResumeLayout(false);
+            this.ChooseMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ChooseMessages.ResumeLayout(false);
-            this.ChooseMessages.PerformLayout();
             this.ResumeLayout(false);
 
         }
