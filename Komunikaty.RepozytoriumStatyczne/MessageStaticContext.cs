@@ -26,8 +26,8 @@ namespace Komunikaty.RepozytoriumStatyczne
             public bool ConfirmationRequired { get; set; }
             public bool Confirmed { get; set; }
             public bool Favourite { get; set; }
-            public MessageType MessageType { get; set; } 
-            public string Content { get; set; } 
+            public MessageType MessageType { get; set; }
+            public string Content { get; set; }
         }
         private readonly static List<IMessage> messages = new List<IMessage>();
         public MessageStaticContext()
@@ -81,6 +81,18 @@ namespace Komunikaty.RepozytoriumStatyczne
         public void SaveMessage(IMessage message)
         {
             messages.Add(new Message(message));
+        }
+
+        public int GetLastId()
+        {
+            return messages.Last().Id;
+        }
+
+        public void UpdateMessage(IMessage message)
+        {
+            var itemToRemove = messages.Single(r => r.Id == message.Id);
+            messages.Remove(itemToRemove);
+            SaveMessage(message);
         }
     }
 }

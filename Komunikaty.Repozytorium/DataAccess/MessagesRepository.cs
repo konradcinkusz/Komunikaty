@@ -1,6 +1,7 @@
 ﻿using Komunikaty.Interfaces;
 using Komunikaty.Repozytorium.DataAccess;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Komunikaty.Repozytorium
@@ -14,6 +15,11 @@ namespace Komunikaty.Repozytorium
             return messageContext.Messages.ToList<IMessage>();
         }
 
+        public int GetLastId()
+        {
+            return messageContext.Messages.Last().Id;
+        }
+
         public IMessage GetMessage(int messageId)
         {
             return messageContext.Messages.Single(m=>m.Id == messageId);
@@ -23,6 +29,14 @@ namespace Komunikaty.Repozytorium
         {
             messageContext.Messages.Add(new Message(message));
             messageContext.SaveChanges();
+        }
+
+        public void UpdateMessage(IMessage message)
+        {
+            var messageTemp = new Message { Id = message.Id };
+            messageContext.Entry(messageTemp).State = EntityState.Deleted;
+            messageContext.SaveChanges();
+            SaveMessage(message);
         }
     }
 }

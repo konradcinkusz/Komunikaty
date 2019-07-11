@@ -7,5 +7,7 @@ namespace Komunikaty.Interfaces
         void SaveMessage(IMessage message);
         IMessage GetMessage(int messageId);
         List<IMessage> GetAllMessage();
+        void UpdateMessage(IMessage message);
+        int GetLastId();
     }
 }
