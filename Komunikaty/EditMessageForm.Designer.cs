@@ -38,6 +38,7 @@
             this.NewValueLabel = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.Properties = new System.Windows.Forms.GroupBox();
+            this.ConfirmationRequired = new System.Windows.Forms.CheckBox();
             this.Confirmed = new System.Windows.Forms.CheckBox();
             this.Favourite = new System.Windows.Forms.CheckBox();
             this.IconGroupBox = new System.Windows.Forms.GroupBox();
@@ -51,7 +52,6 @@
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.ApplyButton = new System.Windows.Forms.Button();
-            this.ConfirmationRequired = new System.Windows.Forms.CheckBox();
             this.Properties.SuspendLayout();
             this.IconGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,11 +66,27 @@
             this.Typ,
             this.Id});
             this.MessagesListViewEdit.GridLines = true;
+            this.MessagesListViewEdit.HideSelection = false;
             this.MessagesListViewEdit.Location = new System.Drawing.Point(12, 12);
             this.MessagesListViewEdit.Name = "MessagesListViewEdit";
             this.MessagesListViewEdit.Size = new System.Drawing.Size(422, 117);
             this.MessagesListViewEdit.TabIndex = 0;
             this.MessagesListViewEdit.UseCompatibleStateImageBehavior = false;
+            this.MessagesListViewEdit.View = System.Windows.Forms.View.Details;
+            // 
+            // Komunikaty
+            // 
+            this.Komunikaty.Text = "Komunikaty";
+            this.Komunikaty.Width = 239;
+            // 
+            // Typ
+            // 
+            this.Typ.Text = "Typ";
+            this.Typ.Width = 115;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
             // 
             // OldValueLabel
             // 
@@ -116,6 +132,16 @@
             this.Properties.TabIndex = 5;
             this.Properties.TabStop = false;
             this.Properties.Text = "Właściwości";
+            // 
+            // ConfirmationRequired
+            // 
+            this.ConfirmationRequired.AutoSize = true;
+            this.ConfirmationRequired.Location = new System.Drawing.Point(164, 20);
+            this.ConfirmationRequired.Name = "ConfirmationRequired";
+            this.ConfirmationRequired.Size = new System.Drawing.Size(144, 17);
+            this.ConfirmationRequired.TabIndex = 6;
+            this.ConfirmationRequired.Text = "Potwierdzone wymagane";
+            this.ConfirmationRequired.UseVisualStyleBackColor = true;
             // 
             // Confirmed
             // 
@@ -254,16 +280,6 @@
             this.ApplyButton.Text = "Zastosuj";
             this.ApplyButton.UseVisualStyleBackColor = true;
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
-            // ConfirmationRequired
-            // 
-            this.ConfirmationRequired.AutoSize = true;
-            this.ConfirmationRequired.Location = new System.Drawing.Point(164, 20);
-            this.ConfirmationRequired.Name = "ConfirmationRequired";
-            this.ConfirmationRequired.Size = new System.Drawing.Size(144, 17);
-            this.ConfirmationRequired.TabIndex = 6;
-            this.ConfirmationRequired.Text = "Potwierdzone wymagane";
-            this.ConfirmationRequired.UseVisualStyleBackColor = true;
             // 
             // EditMessages
             // 

@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace Komunikaty
 {
+    /// <summary>
+    /// Okno wysyłania wiadomości
+    /// </summary>
     public partial class SendWindow : Form
     {
         private IMessages messagesDataAccess;
@@ -36,45 +39,56 @@ namespace Komunikaty
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-
-            IMessage message = new ViewModels.Message(messagesDataAccess.GetLastId());
-            if (MessagesTabs.SelectedTab.Name == "EnterMessages")
+            try //Niestety muszę opakować w try, ponieważ nie przewidziałem niektórych wyjątków
             {
-                message.ConfirmationRequired = ConfirmationCheckBox.Checked;
-                message.Favourite = AddToFavourite.Checked;
-                message.Content = MessageTextBox.Text.ToString();
-
-                MessageType type = MessageType.None;
-                foreach (var control in IconGroupBox.Controls)
+                IMessage message = new ViewModels.Message(messagesDataAccess.GetLastId());
+                if (MessagesTabs.SelectedTab.Name == "EnterMessages")
                 {
-                    if (control is RadioButton)
+                    message.ConfirmationRequired = ConfirmationCheckBox.Checked;
+                    message.Favourite = AddToFavourite.Checked;
+                    message.Content = MessageTextBox.Text.ToString();
+
+                    MessageType type = MessageType.None;
+                    foreach (var control in IconGroupBox.Controls)
                     {
-                        if (((RadioButton)control).Checked)
+                        if (control is RadioButton)
                         {
-                            if (((RadioButton)control).Text == "Błąd")
-                                type = MessageType.Error;
-                            else if (((RadioButton)control).Text == "Ostrzeżenie")
-                                type = MessageType.Warning;
-                            else if (((RadioButton)control).Text == "Informacja")
-                                type = MessageType.Information;
-                            break;
+                            if (((RadioButton)control).Checked)
+                            {
+                                if (((RadioButton)control).Text == "Błąd")
+                                    type = MessageType.Error;
+                                else if (((RadioButton)control).Text == "Ostrzeżenie")
+                                    type = MessageType.Warning;
+                                else if (((RadioButton)control).Text == "Informacja")
+                                    type = MessageType.Information;
+                                break;
+                            }
                         }
                     }
+                    message.MessageType = type;
                 }
-                message.MessageType = type;
-            }
-            else
-            {
-                int messageId;
-                int.TryParse(MessagesListView.SelectedItems[0].SubItems[2].Text, out messageId);
-                message = messagesDataAccess.GetMessage(messageId);
-                message.ConfirmationRequired = ConfirmationCheckBox.Checked;
-            }
-            if (Save.Checked)
-            {
-                messagesDataAccess.SaveMessage(message);
-            }
+                else
+                {
+                    int messageId;
+                    int.TryParse(MessagesListView.SelectedItems[0].SubItems[2].Text, out messageId);
+                    message = messagesDataAccess.GetMessage(messageId);
+                    message.ConfirmationRequired = ConfirmationCheckBox.Checked;
+                }
+                if (Save.Checked)
+                {
+                    messagesDataAccess.SaveMessage(message);
+                }
 
+                RefreshWindow();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nie udało się wysłać komunikatu!" + ex.ToString());
+            }
+        }
+
+        public void RefreshWindow()
+        {
             this.Controls.Clear();
             this.InitializeComponent();
             this.InitializeEntryData();
@@ -89,7 +103,7 @@ namespace Komunikaty
         {
             try
             {
-                EditMessages form = new EditMessages(messagesDataAccess, MessagesListView.SelectedItems[0].SubItems[0].Text);
+                EditMessages form = new EditMessages(this, messagesDataAccess, MessagesListView.SelectedItems[0].SubItems[0].Text);
 
                 form.Show();
             }

@@ -16,22 +16,15 @@ namespace Komunikaty
     public partial class EditMessages : Form
     {
         private IMessages messagesDataAccess;
-        private void InitializeEntryData()
+        private SendWindow mainForm = null;
+        public EditMessages(Form callingForm, IMessages messagesDataAccess, string deafultMessage = "")
         {
-            foreach (IMessage message in messagesDataAccess.GetAllMessage())
-            {
-                string[] row = { message.Content, new MessageTypeMapping(message.MessageType).ToString(), message.Id.ToString() };
-                var listViewItem = new ListViewItem(row);
-                MessagesListViewEdit.Items.Add(listViewItem);
-            }
-            MessagesListViewEdit.Click += MessagesListViewEdit_Click;
-        }
-        public EditMessages(IMessages messagesDataAccess, string deafultMessage = "")
-        {
+            if(callingForm is SendWindow)
+                mainForm = (SendWindow)callingForm;
             this.messagesDataAccess = messagesDataAccess;
             InitializeComponent();
             InitializeEntryData();
-            if(deafultMessage != "")
+            if (deafultMessage != "")
             {
                 int i = 0;
                 MessagesListViewEdit.FocusedItem = MessagesListViewEdit.Items[0];
@@ -42,11 +35,24 @@ namespace Komunikaty
                     i++;
                 }
                 MessagesListViewEdit.Items[i].Selected = true;
+                MessagesListViewEdit.Items[i].Focused = true;
                 MessagesListViewEdit.Select();
+                MessagesListViewEdit.HideSelection = false;
                 MessagesListViewEdit.EnsureVisible(i);
+                
             }
         }
 
+        private void InitializeEntryData()
+        {
+            foreach (IMessage message in messagesDataAccess.GetAllMessage())
+            {
+                string[] row = { message.Content, new MessageTypeMapping(message.MessageType).ToString(), message.Id.ToString() };
+                var listViewItem = new ListViewItem(row);
+                MessagesListViewEdit.Items.Add(listViewItem);
+            }
+            MessagesListViewEdit.Click += MessagesListViewEdit_Click;
+        }
         private void MessagesListViewEdit_Click(object sender, EventArgs e)
         {
             IMessage message;
@@ -104,6 +110,7 @@ namespace Komunikaty
             messagesDataAccess.UpdateMessage(message);
             this.Controls.Clear();
             this.InitializeComponent();
+            this.InitializeEntryData();
         }
         protected override void OnClosed(EventArgs e)
         {
@@ -113,11 +120,15 @@ namespace Komunikaty
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            if (mainForm != null)
+                mainForm.RefreshWindow();
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            if (mainForm != null)
+                mainForm.RefreshWindow();
         }
     }
 }
