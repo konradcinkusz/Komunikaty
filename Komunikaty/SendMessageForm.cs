@@ -11,6 +11,8 @@ namespace Komunikaty
     public partial class SendWindow : Form
     {
         private IMessages messagesDataAccess;
+        private IReceiver receiver;
+
         private void InitializeEntryData()
         {
             foreach (IMessage message in messagesDataAccess.GetAllMessage())
@@ -24,9 +26,10 @@ namespace Komunikaty
                 }
             }
         }
-        public SendWindow(IMessages messagesDataAccess)
+        public SendWindow(IMessages messagesDataAccess, IReceiver receiver)
         {
             InitializeComponent();
+            this.receiver = receiver;
             this.messagesDataAccess = messagesDataAccess;
             InitializeEntryData();
 
@@ -79,6 +82,7 @@ namespace Komunikaty
                     messagesDataAccess.SaveMessage(message);
                 }
 
+                receiver.SendMessage(message);
                 RefreshWindow();
             }
             catch (Exception ex)

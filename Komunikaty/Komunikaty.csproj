@@ -98,6 +98,10 @@
       <Project>{DD536E37-7449-4C32-9E44-DA376E2EEC00}</Project>
       <Name>Komunikaty.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Komunikaty.ReceiverStatyczny\Komunikaty.ReceiverStatyczny.csproj">
+      <Project>{f7dc5eb9-5256-476b-9491-59df8ca38365}</Project>
+      <Name>Komunikaty.ReceiverStatyczny</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Komunikaty.RepozytoriumStatyczne\Komunikaty.RepozytoriumStatyczne.csproj">
       <Project>{21ae5737-b498-46ca-892d-890e8169b979}</Project>
       <Name>Komunikaty.RepozytoriumStatyczne</Name>

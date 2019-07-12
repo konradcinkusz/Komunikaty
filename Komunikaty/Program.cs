@@ -14,7 +14,7 @@ namespace Komunikaty
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SendWindow(new RepozytoriumStatyczne.MessageStaticContext()));
+            Application.Run(new SendWindow(new RepozytoriumStatyczne.MessageStaticContext(), new ReceiverStatyczny.Receiver()));
 
         }
     }

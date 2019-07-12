@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD536E37-7449-4C32-9E44-DA376E2EEC00}</ProjectGuid>
+    <ProjectGuid>{F7DC5EB9-5256-476B-9491-59DF8CA38365}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Komunikaty.Interfaces</RootNamespace>
-    <AssemblyName>Komunikaty.Interfaces</AssemblyName>
+    <RootNamespace>Komunikaty.ReceiverStatyczny</RootNamespace>
+    <AssemblyName>Komunikaty.ReceiverStatyczny</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMessages.cs" />
-    <Compile Include="IMessage.cs" />
-    <Compile Include="IReceiver.cs" />
-    <Compile Include="MessageType.cs" />
+    <Compile Include="Receiver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Komunikaty.Interfaces\Komunikaty.Interfaces.csproj">
+      <Project>{dd536e37-7449-4c32-9e44-da376e2eec00}</Project>
+      <Name>Komunikaty.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

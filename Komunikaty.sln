@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komunikaty.Interfaces", "Ko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komunikaty.RepozytoriumStatyczne", "Komunikaty.RepozytoriumStatyczne\Komunikaty.RepozytoriumStatyczne.csproj", "{21AE5737-B498-46CA-892D-890E8169B979}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komunikaty.ReceiverStatyczny", "Komunikaty.ReceiverStatyczny\Komunikaty.ReceiverStatyczny.csproj", "{F7DC5EB9-5256-476B-9491-59DF8CA38365}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{21AE5737-B498-46CA-892D-890E8169B979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21AE5737-B498-46CA-892D-890E8169B979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21AE5737-B498-46CA-892D-890E8169B979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DC5EB9-5256-476B-9491-59DF8CA38365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DC5EB9-5256-476B-9491-59DF8CA38365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DC5EB9-5256-476B-9491-59DF8CA38365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DC5EB9-5256-476B-9491-59DF8CA38365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
